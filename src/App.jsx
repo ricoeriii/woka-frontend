@@ -6,7 +6,8 @@ import { OBJExporter } from 'three/addons/exporters/OBJExporter.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import tunnel from 'tunnel-rat'
-import { LinearToneMapping } from 'three';
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const status = tunnel()
 
