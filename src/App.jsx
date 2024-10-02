@@ -19,7 +19,7 @@ const MODELS = {
 
 export default function App() {
   const { model } = useControls({ model: { value: 'Hand', options: Object.keys(MODELS) } })
-  const { color } = useControls({ color: "#f00" });
+  const { color } = useControls({ color: "#e5c298" });
   const x = useControls({ x: 1 })
   const y = useControls({ y: 1 })
   const z = useControls({ z: 1 })
