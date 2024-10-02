@@ -9,6 +9,7 @@ import tunnel from 'tunnel-rat'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+
 const status = tunnel()
 
 const MODELS = {
