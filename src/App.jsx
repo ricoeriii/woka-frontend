@@ -79,8 +79,8 @@ export default function App() {
     <div className="card   w-3/5 h-5/6 shadow-xl flex-auto relative top-10 text-center bg-slate-300">
       <figure className='h-full'>
         <Canvas>
-        <ambientLight intensity={0.3} color={"#ffffff"} />
-        <directionalLight intensity={2.5} color={"#ffffff"} />
+        <ambientLight intensity={0.8} color={"#ffffff"} />
+        <directionalLight intensity={5} color={"#ffffff"} />
           <group ref={canvasRef}>
             <Suspense fallback={<status.In>Loading ...</status.In>}>
               <Scene scale={ScaleXYZ} url={MODELS[model]} color={color} />
