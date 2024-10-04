@@ -15,14 +15,20 @@ const MODELS = {
   Foot: '/models/feet.obj',
   Protohand: '/models/protohand.obj'
 }
+const THEMES = {
+  Dark: 'bg-slate-900',
+  Light: 'bg-slate-200'
+}
+
 
 export default function App() {
-  const { model } = useControls({ model: { value: 'Hand', options: Object.keys(MODELS) } })
-  const { color } = useControls({ color: "#e5c298" });
+  const { model } = useControls({ model: { value: 'Hand', label: '3D Model : ', options: Object.keys(MODELS) } })
+  const { color } = useControls({ color: {value: "#e5c298", label: 'Color : '} });
   const x = useControls({ x: 1 })
   const y = useControls({ y: 1 })
   const z = useControls({ z: 1 })
   const ScaleXYZ = [x.x, y.y, z.z]
+  const { ThemeBoard } = useControls({ ThemeBoard: { value: 'Dark', label: 'Theme Board : ', options: Object.keys(THEMES) } })
 
   const Scene = ({ url, color, ...props }) => {
     const deferred = useDeferredValue(url)
@@ -76,7 +82,7 @@ export default function App() {
 
   return (
     <>
-    <div className="card   w-3/5 h-5/6 shadow-xl flex-auto relative top-10 text-center bg-slate-300">
+    <div className={`card w-3/5 h-5/6 shadow-xl flex-auto relative top-10 text-cente ${THEMES[ThemeBoard]}`}>
       <figure className='h-full'>
         <Canvas>
         <hemisphereLight intensity={1.6} color={"#ffffff"} />
