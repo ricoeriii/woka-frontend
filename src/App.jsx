@@ -24,9 +24,9 @@ const THEMES = {
 export default function App() {
   const { model } = useControls({ model: { value: 'Hand', label: '3D Model : ', options: Object.keys(MODELS) } })
   const { color } = useControls({ color: {value: "#e5c298", label: 'Color : '} });
-  const x = useControls({ x: 1 })
-  const y = useControls({ y: 1 })
-  const z = useControls({ z: 1 })
+  const x = useControls({ x: 10 })
+  const y = useControls({ y: 10 })
+  const z = useControls({ z: 10 })
   const ScaleXYZ = [x.x, y.y, z.z]
   const { ThemeBoard } = useControls({ ThemeBoard: { value: 'Dark', label: 'Theme Board : ', options: Object.keys(THEMES) } })
 
@@ -85,9 +85,9 @@ export default function App() {
     <div className={`card w-3/5 h-5/6 shadow-xl flex-auto relative top-10 text-cente ${THEMES[ThemeBoard]}`}>
       <figure className='h-full'>
         <Canvas>
-        <hemisphereLight intensity={1.6} color={"#ffffff"} />
-        <ambientLight intensity={0.8} color={"#ffffff"} />
-        <directionalLight intensity={5} color={"#ffffff"} />
+        <hemisphereLight intensity={0.3} color={"#ffffff"} />
+        <ambientLight intensity={0.3} color={"#ffffff"} />
+        <directionalLight intensity={2.5} color={"#ffffff"} />
           <group ref={canvasRef}>
             <Suspense fallback={<status.In>Loading ...</status.In>}>
               <Scene scale={ScaleXYZ} url={MODELS[model]} color={color} />
