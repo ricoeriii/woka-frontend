@@ -13,6 +13,7 @@ const MODELS = {
   Hand: '/models/hand.obj',
   Arm: '/models/arm.obj',
   Foot: '/models/feet.obj',
+  Dafo: '/models/dafo.obj',
   Protohand: '/models/protohand.obj'
 }
 const THEMES = {
@@ -24,9 +25,9 @@ const THEMES = {
 export default function App() {
   const { model } = useControls({ model: { value: 'Hand', label: '3D Model : ', options: Object.keys(MODELS) } })
   const { color } = useControls({ color: {value: "#e5c298", label: 'Color : '} });
-  const x = useControls({ x: 10 })
-  const y = useControls({ y: 10 })
-  const z = useControls({ z: 10 })
+  const x = useControls({ x: 1 })
+  const y = useControls({ y: 1 })
+  const z = useControls({ z: 1 })
   const ScaleXYZ = [x.x, y.y, z.z]
   const { ThemeBoard } = useControls({ ThemeBoard: { value: 'Dark', label: 'Theme Board : ', options: Object.keys(THEMES) } })
 
